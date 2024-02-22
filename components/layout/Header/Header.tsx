@@ -1,20 +1,14 @@
-import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { HeaderActions as Actions } from './HeaderActions'
+import { LangSwitcher } from './LangSwitcher'
 
 function Header() {
-  const t = useTranslations('Header')
   return (
     <>
       <header className='header'>
         <div className='header-top'>
           <nav className='container flex items-center justify-between'>
-            <button className='flex items-center gap-1.5'>
-              <svg className='w-5 h-5'>
-                <use href='/sprite.svg#Ukraine' />
-              </svg>
-              <span className='text-h6 uppercase'>{t('currentLocale')}</span>
-            </button>
-
+            <LangSwitcher />
             <Link
               href='/'
               aria-label='main page'
@@ -24,49 +18,42 @@ function Header() {
                 <use href='/sprite.svg#logo' />
               </svg>
             </Link>
-
-            <div className='actions'>
-              <button className='flex items-center justify-center cursor-pointer w-6 h-6'>
-                <svg className='w-full h-full'>
-                  <use href='/sprite.svg#search' />
-                </svg>
-              </button>
-              <div className='border-l-[1px] border-dashed border-divider' />
-              <Link
-                href='#'
-                className='flex items-center justify-center cursor-pointer w-6 h-6'
-              >
-                <svg className='w-full h-full'>
-                  <use href='/sprite.svg#like' />
-                </svg>
-              </Link>
-              <Link
-                href='#'
-                className='flex items-center justify-center cursor-pointer w-6 h-6'
-              >
-                <svg className='w-full h-full'>
-                  <use href='/sprite.svg#cart' />
-                </svg>
-              </Link>
-              <Link
-                href='#'
-                className='flex items-center justify-center cursor-pointer w-6 h-6'
-              >
-                <svg className='w-full h-full'>
-                  <use href='/sprite.svg#account' />
-                </svg>
-              </Link>
-            </div>
+            <Actions />
           </nav>
         </div>
 
         <div className='header-bottom'>
-          <nav className='container'>
+          <nav className='container flex items-center justify-between'>
             <Link href='/' className='logo'>
               <svg>
                 <use href='/sprite.svg#logo' />
               </svg>
             </Link>
+            <menu className='flex items-center justify-start gap-10'>
+              <li>
+                <Link
+                  href='/'
+                  className='flex items-center justify-start text-h6 uppercase'
+                >
+                  Одежда
+                  <svg className='w-5 h-5 text-blue'>
+                    <use href='/sprite.svg#chevron-down' />
+                  </svg>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/'
+                  className='flex items-center justify-start text-h6 uppercase'
+                >
+                  Обувь
+                  <svg className='w-5 h-5 text-blue'>
+                    <use href='/sprite.svg#chevron-down' />
+                  </svg>
+                </Link>
+              </li>
+            </menu>
+            <Actions />
           </nav>
         </div>
       </header>

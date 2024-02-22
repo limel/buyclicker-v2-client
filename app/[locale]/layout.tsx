@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import Layout from 'components/layout/Layout'
 import 'styles/styles.scss'
 
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang={locale} className={`${inter.variable} font-sans`}>
       <body>
         <Layout>{children}</Layout>
+        <SpeedInsights />
       </body>
     </html>
   )
