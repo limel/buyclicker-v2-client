@@ -2,5 +2,8 @@
   "Metadata": {
     "title": "Buyclicker",
     "description": "Buyclicker is a place where you can everthing."
+  },
+  "Header": {
+    "currentLocale": "england"
   }
 }

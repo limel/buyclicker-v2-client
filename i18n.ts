@@ -8,7 +8,6 @@ export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as string)) notFound()
 
-  console.log('18n - locale', locale)
   return {
     messages: (
       await (locale === 'uk'
