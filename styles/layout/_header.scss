@@ -6,14 +6,36 @@
     transition: opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
 
-  .header-bottom {
-    .logo {
-      opacity: 0;
-    }
-  }
-
   .actions {
     @apply flex items-stretch justify-start w-fit gap-6;
     transition: opacity 0.3s ease-in-out;
   }
+
+  .header-bottom .logo {
+    @apply opacity-0
+  }
+
+  .header-bottom .actions {
+    @apply opacity-0;
+  }
+}
+
+.header_fixed {
+  @apply -translate-y-8 pb-8;
+
+  .header-top {
+    @apply pb-0 opacity-0;
+  }
+
+  .header-bottom .logo {
+    @apply opacity-100;
+  }
+
+  .header-bottom .actions {
+    @apply opacity-100;
+  }
+}
+
+.header_hide {
+  @apply -translate-y-full
 }
