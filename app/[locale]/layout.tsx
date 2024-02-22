@@ -1,7 +1,11 @@
 import { Inter } from 'next/font/google'
+import Layout from 'components/layout/Layout'
 import 'styles/styles.scss'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
 export default function RootLayout({
   children,
@@ -10,10 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
   params: { locale: string }
 }>) {
-  console.log(locale)
   return (
-    <html lang={locale}>
-      <body className={inter.className}>{children}</body>
+    <html lang={locale} className={`${inter.variable} font-sans`}>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   )
 }
