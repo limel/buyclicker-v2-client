@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        primary: ['var(--font-inter)'],
       },
       colors: {
         black: '#212121',
