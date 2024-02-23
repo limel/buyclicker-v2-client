@@ -5,5 +5,11 @@
   },
   "Header": {
     "currentLocale": "england"
+  },
+  "workInProgress": {
+    "title": "Work in progress",
+    "message": "Dear visitors, we are currently working on our website",
+    "message2": "Please come back later. Thank you for your understanding",
+    "message3": "Buyclicker Team"
   }
 }
