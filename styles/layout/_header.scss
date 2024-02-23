@@ -2,7 +2,6 @@
   @apply border-b-[1px] border-dashed border-divider pt-8 pb-12 fixed top-0 left-0 w-full z-50 bg-white transition-transform ease-in-out duration-300;
 
   .header-top {
-    @apply pb-12;
     transition: opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
 
