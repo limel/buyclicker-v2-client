@@ -6,6 +6,7 @@ import 'styles/styles.scss'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
 export default function RootLayout({
@@ -16,9 +17,9 @@ export default function RootLayout({
   params: { locale: string }
 }>) {
   return (
-    <html lang={locale} className={`${inter.variable} font-sans`}>
-      <body>
-        <Layout>{children}</Layout>
+    <html lang={locale}>
+      <body className={`${inter.variable}`}>
+        <Layout locale={locale}>{children}</Layout>
         <SpeedInsights />
       </body>
     </html>
