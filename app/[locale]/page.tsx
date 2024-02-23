@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+// import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({
@@ -14,14 +14,9 @@ export async function generateMetadata({
 }
 
 export default function Home() {
-  const t = useTranslations()
   return (
     <main className=''>
-      <div className='container'>
-        <span>test</span>
-        <h1>{t('Metadata.title')}</h1>
-        <p>description</p>
-      </div>
+      <div className='container' />
     </main>
   )
 }

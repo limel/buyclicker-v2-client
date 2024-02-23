@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import debounce from 'debounce'
-// import clsx from 'clsx'
 import Link from 'next/link'
 import { HeaderActions as Actions } from './HeaderActions'
 import { HeaderLangSwitcher as LangSwitcher } from './HeaderLangSwitcher'
@@ -76,9 +75,6 @@ function Header() {
           </nav>
         </div>
       </header>
-      <div className='header-info'>
-        <span>header info</span>
-      </div>
     </>
   )
 }

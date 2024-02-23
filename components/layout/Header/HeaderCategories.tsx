@@ -13,13 +13,13 @@ export function HeaderCategories() {
             <use href='/sprite.svg#chevron-down' />
           </svg>
         </Link>
-        <div className='absolute events-none w-full bg-white shadow-md py-5 left-0 top-full'>
+        {/* <div className='absolute events-none w-full bg-white shadow-md py-5 left-0 top-full'>
           <ul className='flex items-center justify-start flex-wrap mx-auto max-w-[1312px] gap-16'>
             <li>category 1</li>
             <li>category 1</li>
             <li>category2</li>
           </ul>
-        </div>
+        </div> */}
       </li>
       <li>
         <Link
