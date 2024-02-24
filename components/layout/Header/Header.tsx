@@ -45,37 +45,35 @@ function Header() {
   })
 
   return (
-    <>
-      <header className='header' ref={headerRef}>
-        <div className='header-top'>
-          <nav className='container flex items-center justify-between'>
-            <LangSwitcher />
-            <Link
-              href='/'
-              aria-label='main page'
-              className='logo absolute left-1/2 -translate-x-1/2'
-            >
-              <svg>
-                <use href='/sprite.svg#logo' />
-              </svg>
-            </Link>
-            <Actions />
-          </nav>
-        </div>
+    <header className='header' ref={headerRef}>
+      <div className='header-top'>
+        <nav className='container flex items-center justify-between'>
+          <LangSwitcher />
+          <Link
+            href='/'
+            aria-label='main page'
+            className='logo absolute left-1/2 -translate-x-1/2'
+          >
+            <svg>
+              <use href='/sprite.svg#logo' />
+            </svg>
+          </Link>
+          <Actions />
+        </nav>
+      </div>
 
-        <div className='header-bottom'>
-          <nav className='container flex items-center justify-between'>
-            <Link href='/' className='logo'>
-              <svg>
-                <use href='/sprite.svg#logo' />
-              </svg>
-            </Link>
-            <Categories />
-            <Actions />
-          </nav>
-        </div>
-      </header>
-    </>
+      <div className='header-bottom'>
+        <nav className='container flex items-center justify-between'>
+          <Link href='/' className='logo'>
+            <svg>
+              <use href='/sprite.svg#logo' />
+            </svg>
+          </Link>
+          <Categories />
+          <Actions />
+        </nav>
+      </div>
+    </header>
   )
 }
 

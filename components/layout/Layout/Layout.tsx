@@ -1,5 +1,7 @@
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import Header from 'components/layout/Header'
+import { StoreProvider } from 'store/StoreProvider'
+
 // import Footer from 'components/layout/Footer'
 
 function Layout({
@@ -11,11 +13,13 @@ function Layout({
 }) {
   const messages = useMessages()
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <Header />
-      {children}
-      {/* <Footer /> */}
-    </NextIntlClientProvider>
+    <StoreProvider>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <Header />
+        {children}
+        {/* <Footer /> */}
+      </NextIntlClientProvider>
+    </StoreProvider>
   )
 }
 
