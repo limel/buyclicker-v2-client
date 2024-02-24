@@ -1,17 +1,22 @@
-import { categoriesAPI } from 'services/CategoreisServices'
-import { ICategory } from 'types/reducers'
+'server only'
+import clientPromise from 'lib/mongodb'
+import { getCategories, getDbAndReqBody } from 'lib/utils/api-routes'
 
-export function HeaderCategories() {
-  const { data } = categoriesAPI.useGetCategoriesQuery()
-  const categories: ICategory[] = Array.isArray(data) ? data : []
+async function fetchCategories() {
+  const { db } = await getDbAndReqBody(clientPromise, null)
+  return await getCategories(db).then((res) => res)
+}
+
+export async function HeaderCategories() {
+  const categories = await fetchCategories()
 
   return (
     <menu className='flex items-center justify-start gap-10 grow-0 shrink-1 basis-3/5'>
       {categories &&
-        categories.map(({ _id, name }: { _id: string; name: string }) => (
-          <li key={_id}>
+        categories.map((category, index) => (
+          <li key={String(category._id) || index}>
             <div className='flex items-center justify-start text-h6 uppercase'>
-              {name}
+              {category.name}
               <svg className='w-5 h-5 text-blue'>
                 <use href='/sprite.svg#chevron-down' />
               </svg>
