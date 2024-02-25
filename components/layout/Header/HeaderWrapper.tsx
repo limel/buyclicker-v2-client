@@ -31,7 +31,7 @@ export function HeaderWrapper({ children }: { children: React.ReactNode }) {
     setPrevScroll(currentScroll)
   }
 
-  const debounceHandler = debounce(updateFixedState, 150)
+  const debounceHandler = debounce(updateFixedState, 30)
   useLayoutEffect(() => {
     if (headerRef.current) {
       const headerHeight = headerRef.current.offsetHeight

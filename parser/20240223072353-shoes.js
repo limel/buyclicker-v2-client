@@ -3,6 +3,8 @@ const xlsx = require('xlsx')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require('fs')
 
+// const slugify = require('@sindresorhus/slugify')
+
 // Load the Excel file
 const workbook = xlsx.readFile('./whs_dropshipping.xlsx')
 // const ofc_dropshipping = xlsx.readFile('./ofc_dropshipping.xlsx')

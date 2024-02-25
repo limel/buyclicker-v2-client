@@ -30,7 +30,7 @@ const config: Config = {
         white: '#FFFFFF',
         'white-900': '#F9F9F9',
         'white-800': '#F4F4F4',
-        'header-hover-menu': 'F9F9F9',
+        'header-hover-menu': '#F9F9F9',
         'grey-light-bg': '#F4F4F4',
       },
       fontSize: {

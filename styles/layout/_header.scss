@@ -6,6 +6,10 @@
     transition: opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
 
+  .logo {
+    transition: opacity 0.3s ease-in-out;
+  }
+
   .actions {
     @apply flex items-stretch justify-start w-fit gap-6;
     transition: opacity 0.3s ease-in-out;
@@ -18,6 +22,22 @@
   .header-bottom .actions {
     @apply opacity-0;
   }
+
+  .category-item {
+    @apply flex items-center justify-start text-h6 uppercase p-3 rounded transition-colors ease-in-out duration-300;
+
+    @media (hover:hover) and (pointer:fine) {
+
+      &:hover {
+        @apply bg-header-hover-menu;
+      }
+    }
+  }
+
+  .category-item.active~.dropdown {
+    @apply opacity-100 pointer-events-auto;
+  }
+
 }
 
 .header_fixed {

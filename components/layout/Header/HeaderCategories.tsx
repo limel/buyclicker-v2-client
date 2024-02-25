@@ -1,58 +1,24 @@
 'server only'
 import clientPromise from 'lib/mongodb'
 import { getCategories, getDbAndReqBody } from 'lib/utils/api-routes'
+import { HeaderCategoryItem as Item } from './HeaderCategoryItem'
+import { ICategory } from './Header.types'
 
 async function fetchCategories() {
   const { db } = await getDbAndReqBody(clientPromise, null)
-  return await getCategories(db).then((res) => res)
+  const rawData = await getCategories(db)
+  const serializedData = JSON.parse(JSON.stringify(rawData)) // Serialize and deserialize
+  return serializedData
 }
 
 export async function HeaderCategories() {
   const categories = await fetchCategories()
-
   return (
-    <menu className='flex items-center justify-start gap-10 grow-0 shrink-1 basis-3/5'>
+    <menu className='flex items-center justify-center gap-10 grow-0 shrink-1 basis-3/5'>
       {categories &&
-        categories.map((category, index) => (
-          <li key={String(category._id) || index}>
-            <div className='flex items-center justify-start text-h6 uppercase'>
-              {category.name}
-              <svg className='w-5 h-5 text-blue'>
-                <use href='/sprite.svg#chevron-down' />
-              </svg>
-            </div>
-          </li>
+        categories.map((category: ICategory, index: number) => (
+          <Item {...category} key={String(category._id) || index} />
         ))}
     </menu>
   )
 }
-
-/* <li>
-        <Link
-          href='/'
-          className='flex items-center justify-start text-h6 uppercase'
-        >
-          Одежда
-          <svg className='w-5 h-5 text-blue'>
-            <use href='/sprite.svg#chevron-down' />
-          </svg>
-        </Link>
-        {/* <div className='absolute events-none w-full bg-white shadow-md py-5 left-0 top-full'>
-          <ul className='flex items-center justify-start flex-wrap mx-auto max-w-[1312px] gap-16'>
-            <li>category 1</li>
-            <li>category 1</li>
-            <li>category2</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <Link
-          href='/'
-          className='flex items-center justify-start text-h6 uppercase'
-        >
-          Обувь
-          <svg className='w-5 h-5 text-blue'>
-            <use href='/sprite.svg#chevron-down' />
-          </svg>
-        </Link>
-      </li> */
