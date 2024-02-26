@@ -1,28 +1,23 @@
 import Link from 'next/link'
-import { HeaderActions as Actions } from './HeaderActions'
-import { HeaderWrapper as Wrapper } from './HeaderWrapper'
-import { HeaderLangSwitcher as LangSwitcher } from './HeaderLangSwitcher'
-import { HeaderCategories as Categories } from './HeaderCategories'
+import { HeaderTop as Top } from 'components/layout/Header/HeaderTop'
+import { HeaderActions as Actions } from 'components/layout/Header/HeaderActions'
+import { HeaderWrapper as Wrapper } from 'components/layout/Header/HeaderWrapper'
+import { HeaderCategories as Categories } from 'components/layout/Header/HeaderCategories'
+import { getCategories, getDbAndReqBody } from 'lib/utils/api-routes'
+import clientPromise from 'lib/mongodb'
 
-function Header() {
+async function fetchCategories() {
+  const { db } = await getDbAndReqBody(clientPromise, null)
+  const data = await getCategories(db)
+  return JSON.stringify(data)
+}
+
+async function Header() {
+  const categories = await fetchCategories().then((data) => JSON.parse(data))
+
   return (
     <Wrapper>
-      <div className='header-top'>
-        <nav className='container flex items-center justify-between'>
-          <LangSwitcher />
-          <Link
-            href='/'
-            aria-label='main page'
-            className='logo absolute left-1/2 -translate-x-1/2'
-          >
-            <svg>
-              <use href='/sprite.svg#logo' />
-            </svg>
-          </Link>
-          <Actions />
-        </nav>
-      </div>
-
+      <Top />
       <div className='header-bottom'>
         <nav className='container flex items-center justify-between'>
           <Link href='/' className='logo'>
@@ -30,7 +25,7 @@ function Header() {
               <use href='/sprite.svg#logo' />
             </svg>
           </Link>
-          <Categories />
+          <Categories categories={categories} />
           <Actions />
         </nav>
       </div>

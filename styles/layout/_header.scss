@@ -1,9 +1,9 @@
 .header {
-  @apply border-b-[1px] border-dashed border-divider pt-8 pb-12 fixed top-0 left-0 w-full z-50 bg-white transition-transform ease-in-out duration-300;
+  @apply border-b-[1px] border-dashed border-divider pt-8 pb-6 fixed top-0 left-0 w-full z-50 bg-white transition-transform ease-in-out duration-300;
 
   .header-top {
-    @apply pb-12;
-    transition: opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    @apply mb-8;
+    transition: opacity 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
   }
 
   .logo {
@@ -25,13 +25,22 @@
 
   .category-item {
     @apply flex items-center justify-start text-h6 uppercase p-3 rounded transition-colors ease-in-out duration-300;
+    
+    &.active {
+      @apply bg-header-hover-menu;
 
-    @media (hover:hover) and (pointer:fine) {
-
-      &:hover {
-        @apply bg-header-hover-menu;
+      svg {
+        @apply transform rotate-180;
       }
     }
+  }
+
+  .dropdown {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .dropdown .container {
+    @include scroll;
   }
 
   .category-item.active~.dropdown {
@@ -44,7 +53,7 @@
   @apply -translate-y-8 pb-8;
 
   .header-top {
-    @apply pb-0 opacity-0;
+    @apply mb-0 opacity-0;
   }
 
   .header-bottom .logo {

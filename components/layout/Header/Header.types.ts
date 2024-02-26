@@ -17,3 +17,9 @@ interface ITranslation {
     slug: string
   }
 }
+
+export interface IHeaderCategoryItem {
+  index: number
+  active: boolean
+  data: ICategory
+}

@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import throttle from 'throttleit'
 import { HeaderContext } from 'context/HeaderContext'
+import clsx from 'clsx'
 
 export function HeaderWrapper({ children }: { children: React.ReactNode }) {
   const headerRef = useRef<HTMLElement>(null)
@@ -53,15 +54,24 @@ export function HeaderWrapper({ children }: { children: React.ReactNode }) {
   }, [])
 
   return (
-    <header className='header' ref={headerRef}>
-      <HeaderContext.Provider
-        value={{
-          activeIndex,
-          setActiveIndex,
+    <>
+      <header
+        className='header'
+        ref={headerRef}
+        onMouseLeave={() => {
+          setActiveIndex(null)
         }}
       >
-        {children}
-      </HeaderContext.Provider>
-    </header>
+        <HeaderContext.Provider
+          value={{
+            activeIndex,
+            setActiveIndex,
+          }}
+        >
+          {children}
+        </HeaderContext.Provider>
+      </header>
+      <div className={clsx('overlay', activeIndex !== null && 'active')} />
+    </>
   )
 }

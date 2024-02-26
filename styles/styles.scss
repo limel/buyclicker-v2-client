@@ -53,3 +53,13 @@ a {
     @apply w-full h-full;
   }
 }
+
+.overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-[#21212152] opacity-0 z-10 transition-opacity duration-300 ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
