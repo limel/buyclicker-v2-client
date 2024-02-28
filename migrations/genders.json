@@ -1,0 +1,22 @@
+[
+  {
+    "name": "чоловіки",
+    "name_en": "men"
+  },
+  {
+    "name": "унісекс",
+    "name_en": "unisex"
+  },
+  {
+    "name": "жінки",
+    "name_en": "women"
+  },
+  {
+    "name": "підлітки",
+    "name_en": "teenagers"
+  },
+  {
+    "name": "діти",
+    "name_en": "children"
+  }
+]
