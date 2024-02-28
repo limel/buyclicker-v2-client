@@ -1,0 +1,222 @@
+[
+  {
+    "name": "кросівки",
+    "name_en": "sneakers"
+  },
+  {
+    "name": "кеди",
+    "name_en": "canvas shoes"
+  },
+  {
+    "name": "тапочки",
+    "name_en": "slippers"
+  },
+  {
+    "name": "cандалі",
+    "name_en": "sandals"
+  },
+  {
+    "name": "черевики",
+    "name_en": "boots"
+  },
+  {
+    "name": "жилетки",
+    "name_en": "vests"
+  },
+  {
+    "name": "брюки",
+    "name_en": "trousers"
+  },
+  {
+    "name": "вітровки",
+    "name_en": "windbreakers"
+  },
+  {
+    "name": "костюми",
+    "name_en": "suits"
+  },
+  {
+    "name": "кофти",
+    "name_en": "sweaters"
+  },
+  {
+    "name": "куртки",
+    "name_en": "jackets"
+  },
+  {
+    "name": "майки",
+    "name_en": "tank tops"
+  },
+  {
+    "name": "футболки",
+    "name_en": "t-shirts"
+  },
+  {
+    "name": "термобілизна",
+    "name_en": "thermal underwear"
+  },
+  {
+    "name": "шорти",
+    "name_en": "shorts"
+  },
+  {
+    "name": "бомбери",
+    "name_en": "bomber jackets"
+  },
+  {
+    "name": "лосіни",
+    "name_en": "leggings"
+  },
+  {
+    "name": "топи спортивні",
+    "name_en": "sports tops"
+  },
+  {
+    "name": "рюкзаки",
+    "name_en": "backpacks"
+  },
+  {
+    "name": "сумки спортивні",
+    "name_en": "sports bags"
+  },
+  {
+    "name": "сумки для взуття",
+    "name_en": "shoe bags"
+  },
+  {
+    "name": "сумки на плече",
+    "name_en": "shoulder bags"
+  },
+  {
+    "name": "сумки на пояс",
+    "name_en": "waist bags"
+  },
+  {
+    "name": "сумки через плече",
+    "name_en": "crossbody bags"
+  },
+  {
+    "name": "шапки",
+    "name_en": "hats"
+  },
+  {
+    "name": "кепки",
+    "name_en": "caps"
+  },
+  {
+    "name": "панама",
+    "name_en": "panama hats"
+  },
+  {
+    "name": "шкарпетки",
+    "name_en": "socks"
+  },
+  {
+    "name": "різне",
+    "name_en": "miscellaneous"
+  },
+  {
+    "name": "рукавиці",
+    "name_en": "gloves"
+  },
+  {
+    "name": "шарф",
+    "name_en": "scarf"
+  },
+  {
+    "name": "баф",
+    "name_en": "buff"
+  },
+  {
+    "name": "спідня білизна",
+    "name_en": "underwear"
+  },
+  {
+    "name": "футбольні бутси",
+    "name_en": "football boots"
+  },
+  {
+    "name": "футбольні бутси мультигрунт",
+    "name_en": "multi-ground football boots"
+  },
+  {
+    "name": "футбольні сороконожки",
+    "name_en": "football cleats"
+  },
+  {
+    "name": "футбольні футзалки",
+    "name_en": "futsal shoes"
+  },
+  {
+    "name": "футбольна форма",
+    "name_en": "football kit"
+  },
+  {
+    "name": "футбольні шорти",
+    "name_en": "football shorts"
+  },
+  {
+    "name": "футбол для тренувань",
+    "name_en": "training football"
+  },
+  {
+    "name": "футбольні м'ячі",
+    "name_en": "football balls"
+  },
+  {
+    "name": "футбольні гетри",
+    "name_en": "football socks"
+  },
+  {
+    "name": "футбольні манішки",
+    "name_en": "football sleeves"
+  },
+  {
+    "name": "футбольні щитки",
+    "name_en": "shin guards"
+  },
+  {
+    "name": "футбольні рукавиці",
+    "name_en": "football gloves"
+  },
+  {
+    "name": "баскетбольні м'ячі",
+    "name_en": "basketball balls"
+  },
+  {
+    "name": "волейбольні м'ячі",
+    "name_en": "volleyballs"
+  },
+  {
+    "name": "наколінники",
+    "name_en": "knee pads"
+  },
+  {
+    "name": "ракетки для тенісу",
+    "name_en": "tennis rackets"
+  },
+  {
+    "name": "одяг для тенісу",
+    "name_en": "tennis clothing"
+  },
+  {
+    "name": "свитски",
+    "name_en": "sweatshirts"
+  },
+  {
+    "name": "повязка на голову",
+    "name_en": "headband"
+  },
+  {
+    "name": "напульсники",
+    "name_en": "wristbands"
+  },
+  {
+    "name": "пляшки для води",
+    "name_en": "water bottles"
+  },
+  {
+    "name": "насоси для мячів",
+    "name_en": "ball pumps"
+  }
+]

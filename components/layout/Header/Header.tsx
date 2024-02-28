@@ -14,7 +14,6 @@ async function fetchCategories() {
 
 async function Header() {
   const categories = await fetchCategories().then((data) => JSON.parse(data))
-
   return (
     <Wrapper>
       <Top />

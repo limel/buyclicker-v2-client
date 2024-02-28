@@ -1,8 +1,11 @@
 'use client'
-// import { useState } from 'react'
 import { useLocale } from 'next-intl'
 import clsx from 'clsx'
-import { IHeaderCategoryItem, ISubcategories } from '../Header.types'
+import {
+  IGenderCategories,
+  IHeaderCategoryItem,
+  ISubcategories,
+} from '../Header.types'
 import { useContext } from 'react'
 import { HeaderContext } from 'context/HeaderContext'
 
@@ -17,7 +20,7 @@ export function HeaderCategoryItem({
     name: data.name,
     description: data.description,
     translation: data.translation,
-    subcategories: data.subcategories,
+    genderCategories: data.gender_categories,
   }
   const locale = useLocale()
   const { setActiveIndex } = useContext(HeaderContext) as {
@@ -38,22 +41,51 @@ export function HeaderCategoryItem({
         </svg>
       </div>
       <div className='dropdown absolute pointer-events-none w-full bg-white shadow-md pt-5 pb-20 left-0 top-full opacity-0'>
-        <div className='container gap-16  flex items-start justify-start flex-wrap lg:max-h-[405.5px] 3xl:max-h-[566.5px] overflow-y-auto'>
-          <ul className='flex items-start gap-4 flex-col'>
-            {category.subcategories &&
-              category.subcategories.map(
-                (subcategory: ISubcategories, index: number) => (
-                  <li
-                    key={String(subcategory._id) || index}
-                    className='text-h6 text-primary-gray'
-                  >
+        <div className='container gap-8 justify-between flex items-start flex-wrap lg:max-h-[405.5px] 3xl:max-h-[566.5px] overflow-y-auto'>
+          {category.genderCategories &&
+            category.genderCategories
+              .slice()
+              .sort((a, b) => {
+                const order = [
+                  'чоловіки',
+                  'жінки',
+                  'унісекс',
+                  'підлітки',
+                  'діти',
+                ]
+                const indexA = order.indexOf(a.name)
+                const indexB = order.indexOf(b.name)
+                return indexA - indexB
+              })
+              .map((category: IGenderCategories, index: number) => (
+                <ul
+                  className='flex items-start gap-4 flex-col max-w-[220px] w-full'
+                  key={String(category._id) || index}
+                >
+                  <li className='text-h6'>
                     {locale === 'en'
-                      ? subcategory.translation.en.name
-                      : subcategory.name}
+                      ? category.translation.en.name
+                      : category.name}
                   </li>
-                )
-              )}
-          </ul>
+                  {category.subcategories &&
+                    category.subcategories
+                      .slice()
+                      .sort()
+                      .map((subcategory: ISubcategories, index: number) => {
+                        if (!subcategory) return
+                        return (
+                          <li
+                            key={String(subcategory._id) || index}
+                            className='text-h6 text-primary-gray'
+                          >
+                            {locale === 'en'
+                              ? subcategory.translation.en.name
+                              : subcategory.name}
+                          </li>
+                        )
+                      })}
+                </ul>
+              ))}
         </div>
       </div>
     </li>
