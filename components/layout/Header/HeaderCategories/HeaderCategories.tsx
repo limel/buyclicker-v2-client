@@ -12,7 +12,6 @@ export function HeaderCategories({
   const { activeIndex } = useContext(HeaderContext) as {
     activeIndex: number | null
   }
-  // const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
     <menu className='flex items-center justify-center gap-10 grow-0 shrink-1 basis-3/5'>

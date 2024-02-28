@@ -41,7 +41,7 @@ export function HeaderCategoryItem({
         </svg>
       </div>
       <div className='dropdown absolute pointer-events-none w-full bg-white shadow-md pt-5 pb-20 left-0 top-full opacity-0'>
-        <div className='container gap-16  flex items-start justify-between  flex-wrap lg:max-h-[405.5px] 3xl:max-h-[566.5px] overflow-y-auto'>
+        <div className='container gap-8 justify-between flex items-start flex-wrap lg:max-h-[405.5px] 3xl:max-h-[566.5px] overflow-y-auto'>
           {category.genderCategories &&
             category.genderCategories
               .slice()
@@ -59,7 +59,7 @@ export function HeaderCategoryItem({
               })
               .map((category: IGenderCategories, index: number) => (
                 <ul
-                  className='flex items-start gap-4 flex-col'
+                  className='flex items-start gap-4 flex-col max-w-[220px] w-full'
                   key={String(category._id) || index}
                 >
                   <li className='text-h6'>
@@ -68,9 +68,10 @@ export function HeaderCategoryItem({
                       : category.name}
                   </li>
                   {category.subcategories &&
-                    category.subcategories.map(
-                      (subcategory: ISubcategories, index: number) => {
-                        console.log(subcategory, 'subcategory')
+                    category.subcategories
+                      .slice()
+                      .sort()
+                      .map((subcategory: ISubcategories, index: number) => {
                         if (!subcategory) return
                         return (
                           <li
@@ -82,8 +83,7 @@ export function HeaderCategoryItem({
                               : subcategory.name}
                           </li>
                         )
-                      }
-                    )}
+                      })}
                 </ul>
               ))}
         </div>
