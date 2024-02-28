@@ -140,6 +140,9 @@ const config: Config = {
           },
         ], //12/20 400
       },
+      screens: {
+        '3xl': '1600px',
+      },
     },
     container: {
       center: true,
@@ -151,7 +154,6 @@ const config: Config = {
       },
       screens: {
         xl: '1440px',
-        '2xl': '1440px',
       },
     },
   },

@@ -4,11 +4,19 @@ export interface ICategory {
   slug: string
   description: string
   translation: ITranslation
-  subcategories?: ISubcategories[]
+  gender_categories: IGenderCategories[]
 }
 
 export interface ISubcategories extends ICategory {
   'parrent-category': string
+}
+
+export interface IGenderCategories {
+  _id: string
+  name: string
+  slug: string
+  translation: ITranslation
+  subcategories: ISubcategories[]
 }
 
 interface ITranslation {
@@ -16,4 +24,10 @@ interface ITranslation {
     name: string
     slug: string
   }
+}
+
+export interface IHeaderCategoryItem {
+  index: number
+  active: boolean
+  data: ICategory
 }
