@@ -17,3 +17,8 @@ export const getCategories = async (db: Db) => {
   const categories = await db.collection('categories').find().toArray()
   return categories
 }
+
+export const getHeroData = async (db: Db) => {
+  const heroData = await db.collection('heros').find().toArray()
+  return heroData
+}

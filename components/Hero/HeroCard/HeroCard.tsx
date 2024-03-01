@@ -1,17 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import ImageWithFallback from 'components/ui/ImageWithFallback'
 import clsx from 'clsx'
+import { IHeroCard } from '../Hero.types'
 
-export default function HeroCard({
+export default async function HeroCard({
   title,
-  img,
   center,
-}: {
-  title: string
-  img: string
-  center?: boolean
-}) {
+  slug,
+  image,
+}: IHeroCard) {
+  const { src, alt } = image
   return (
     <article
       className={clsx(
@@ -20,23 +19,23 @@ export default function HeroCard({
           'min-w-[624px] grid-row-1 grid-col-2 col-span-1 row-span-2 border-none self-start'
       )}
     >
-      <Link href='/'>
+      <Link href={slug ? slug : '/'} title={title}>
         <div className='mb-4 rounded-xl overflow-hidden'>
-          <Image
-            priority={true}
-            placeholder='blur'
-            blurDataURL='/images/data-placeholder.svg'
-            src={img}
+          <ImageWithFallback
+            fallbackSrc='/images/placeholder.svg'
+            src={src}
             width={center ? 624 : 280}
             height={center ? 400 : 280}
-            alt='image'
-            className='group-hover/hero:scale-110 transition-transform duration-300 ease-in-out transform-gpu'
+            priority={true}
+            alt={alt || title}
+            className='group-hover/hero:scale-110 transition-transform duration-300 ease-in-out transform-gpu '
           />
         </div>
         <h1
           className={clsx(
             'text-h5 pb-8',
-            center && 'pb-0 pt-6 mt-8 border-t-4 border-solid border-black'
+            center &&
+              'text-h2 pb-0 pt-6 mt-8 border-t-4 border-solid border-black'
           )}
         >
           {title}
