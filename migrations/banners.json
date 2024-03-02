@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Культові кросівки від бренду Jordan",
+    "image": {
+      "src": "/images/hero/banner1.jpg",
+      "alt": "Кросівки від бренду Jordan"
+    },
+    "translation": {
+      "en": {
+        "title": "Cult sneakers from Jordan brand"
+      }
+    }
+  },
+  {
+    "title": "Будьте в тренді з новою зимовою колекцією від The North Face",
+    "image": {
+      "src": "/images/hero/banner2.jpg",
+      "alt": "Бренд The North Face"
+    },
+    "translation": {
+      "en": {
+        "title": "Stay in trend with the new winter collection from The North Face"
+      }
+    }
+  },
+  {
+    "title": "Стильні жіночі бомбери та куртки від Nike",
+    "image": {
+      "src": "/images/hero/banner3.jpg",
+      "alt": "Дівчина в бомбері від Nike"
+    },
+    "translation": {
+      "en": {
+        "title": "Stylish women's bombers and jackets from Nike"
+      }
+    }
+  },
+  {
+    "title": "Чоловічі спортивні костюми від Adidas",
+    "image": {
+      "src": "/images/hero/banner4.jpg",
+      "alt": "Хлопець в костюмі від Adidas"
+    },
+    "translation": {
+      "en": {
+        "title": "Men's tracksuits from Adidas"
+      }
+    }
+  },
+  {
+    "title": "Трендові кросівки Salomon Xt-6 Expanse",
+    "image": {
+      "src": "/images/hero/banner5.jpg",
+      "alt": "Пара кросівок Salomon Xt-6 Expanse"
+    },
+    "translation": {
+      "en": {
+        "title": "Trendy sneakers Salomon Xt-6 Expanse"
+      }
+    }
+  }
+]

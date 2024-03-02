@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
-      <body className={`${inter.variable}`}>
+      <body className={`${inter.variable} pt-[157px]`}>
         <Layout locale={locale}>{children}</Layout>
         <SpeedInsights />
       </body>
