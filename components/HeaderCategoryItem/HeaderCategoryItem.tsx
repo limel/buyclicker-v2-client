@@ -5,7 +5,7 @@ import {
   IGenderCategories,
   IHeaderCategoryItem,
   ISubcategories,
-} from '../Header.types'
+} from 'types/Header.types'
 import { useContext } from 'react'
 import { HeaderContext } from 'context/HeaderContext'
 
