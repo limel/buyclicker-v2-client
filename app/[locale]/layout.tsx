@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Layout from 'components/layout/Layout'
+import Layout from 'components/Layout'
 import 'styles/styles.scss'
 
 const inter = Inter({

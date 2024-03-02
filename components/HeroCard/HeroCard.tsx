@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import ImageWithFallback from 'components/ui/ImageWithFallback'
+import ImageWithFallback from 'components/ImageWithFallback'
 import clsx from 'clsx'
-import { IHeroCard } from '../Hero.types'
+import { IHeroCard } from 'types/Hero.types'
 
 export default async function HeroCard({
   title,

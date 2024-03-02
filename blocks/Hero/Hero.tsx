@@ -1,8 +1,7 @@
 import { getHeroData, getDbAndReqBody } from 'lib/utils/api-routes'
 import clientPromise from 'lib/mongodb'
-import { IHeroCard } from './Hero.types'
-
-import HeroCard from './HeroCard'
+import HeroCard from 'components/HeroCard'
+import { IHeroCard } from 'types/Hero.types'
 
 async function fetchHeroData() {
   const { db } = await getDbAndReqBody(clientPromise, null)
@@ -14,7 +13,7 @@ export default async function Hero() {
   const heros = await fetchHeroData().then((data) => JSON.parse(data))
   return (
     <section className='mt-12 mb-12 '>
-      <div className='container grid temapl grid-cols-[0.5fr_1fr_0.5fr] grid-rows-2 gap-x-16 gap-y-8'>
+      <div className='container grid grid-cols-[0.5fr_1fr_0.5fr] grid-rows-2 gap-x-16 gap-y-8'>
         {heros &&
           heros.map((hero: IHeroCard, index: number) => (
             <HeroCard

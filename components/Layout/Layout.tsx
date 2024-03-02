@@ -1,5 +1,5 @@
 import { NextIntlClientProvider, useMessages } from 'next-intl'
-import Header from 'components/layout/Header'
+import Header from 'layout/Header'
 // import { StoreProvider } from 'store/StoreProvider'
 // import Footer from 'components/layout/Footer'
 

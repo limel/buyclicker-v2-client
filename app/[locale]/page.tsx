@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import Hero from 'components/Hero'
+import Hero from 'blocks/Hero'
 
 export async function generateMetadata({
   params: { locale },

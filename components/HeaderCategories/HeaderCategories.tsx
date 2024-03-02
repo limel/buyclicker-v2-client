@@ -1,7 +1,7 @@
 'use client'
 import { useContext } from 'react'
 import { HeaderCategoryItem as Item } from '../HeaderCategoryItem/HeaderCategoryItem'
-import { ICategory } from '../Header.types'
+import { ICategory } from 'types/Header.types'
 import { HeaderContext } from 'context/HeaderContext'
 
 export function HeaderCategories({
