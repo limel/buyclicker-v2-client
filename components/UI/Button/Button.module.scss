@@ -1,0 +1,79 @@
+.btn {
+  @apply text-button flex items-center justify-center border-[1px] border-solid border-transparent rounded-[100px] w-fit h-fit cursor-pointer transition-all duration-300 ease-in-out;
+
+  svg {
+    @apply w-6 h-6 fill-current;
+  }
+}
+
+.primary {
+  @apply py-4 px-8 min-w-[205px];
+}
+
+.secondary {
+  @apply py-3 px-6 min-w-[150px];
+}
+
+.black {
+  @apply bg-black text-white;
+
+  @media(hover: hover) and (pointer: fine) {
+    &:hover {
+      @apply bg-black-hovered text-white;
+    }
+
+    &:focus {
+      outline: none;
+      @apply bg-black-hovered text-white;
+    }
+  }
+
+  &:disabled {
+    @apply bg-black-disabled text-white;
+    cursor: not-allowed;
+  }
+
+}
+
+.peachy {
+  @apply bg-peachy text-white;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @apply bg-peachy-hovered text-white;
+    }
+
+    &:focus {
+      outline: none;
+      @apply bg-peachy-hovered text-white;
+    }
+  }
+
+  &:disabled {
+    @apply bg-orange;
+    cursor: not-allowed;
+  }
+}
+
+.grey {
+  @apply bg-grey-light text-black;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @apply bg-black text-white;
+    }
+
+    &:focus {
+      outline: none;
+      @apply bg-black text-white;
+    }
+  }
+}
+
+.white {
+  @apply bg-white text-black;
+}
+
+.transparent {
+  @apply bg-transparent text-black;
+}

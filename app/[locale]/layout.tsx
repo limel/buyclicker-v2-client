@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import Header from 'layout/Header'
 import Layout from 'components/Layout'
 import 'styles/styles.scss'
 
@@ -18,8 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} pt-[157px]`}>
-        <Layout locale={locale}>{children}</Layout>
+      <body className={`${inter.variable} pt-[157px] relative`}>
+        <Layout locale={locale}>
+          <Header />
+          {children}
+        </Layout>
         <SpeedInsights />
       </body>
     </html>
