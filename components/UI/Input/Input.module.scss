@@ -1,10 +1,11 @@
 .input {
   @apply flex flex-col gap-2 text-primary-gray text-sm;
 
+
   input {
     outline: none;
     border-color: theme('colors.old-price');
-    @apply py-3 px-4 border-[1px] rounded-lg text-base cursor-pointer transition-all duration-300 ease-in-out;
+    @apply py-3 px-4 border-[1px] rounded-lg text-base transition-all duration-300 ease-in-out;
 
     &:disabled {
       border-color: theme('colors.divider');
@@ -28,4 +29,12 @@
       box-shadow: 0px 0px 0px 3px theme('colors.input-hover');
     }
   }
+
+  &_error {
+    input {
+      box-shadow: none !important;
+      border-color: theme('colors.red') !important;
+    }
+  }
+
 }

@@ -6,7 +6,12 @@
   "Header": {
     "currentLocale": "ukraine"
   },
-  "Registration": {},
+  "RegistrationForm": {
+    "title": "Реєстрація",
+    "legend": "Введіть вашу персональну інформацію",
+    "button": "Створити обліковий запис",
+    "titleOptions": "Ваші вподобання"
+  },
   "LoginForm": {
     "title": "Увійти",
     "legend": "У мене вже є обліковий запис",
@@ -23,7 +28,23 @@
     },
     "password": {
       "label": "Пароль",
-      "placeholder": "Ваш пароль"
+      "placeholder": "Ваш пароль",
+      "placeholderCreate": "Створіть свій пароль"
+    },
+    "name": {
+      "label": "Ім'я",
+      "placeholder": "Ваше ім'я"
+    },
+    "lastName": {
+      "label": "Прізвище",
+      "placeholder": "Ваше прізвище"
+    },
+    "phone": {
+      "label": "Номер телефону"
     }
+  },
+  "Validation": {
+    "required": "Це поле є обов'язковим",
+    "email": "Введіть коректну адресу електронної пошти"
   }
 }

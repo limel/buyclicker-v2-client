@@ -6,8 +6,8 @@ import { Form, Formik } from 'formik'
 import * as yup from 'yup'
 import { useTranslations } from 'next-intl'
 
-export default function LoginForm() {
-  const t = useTranslations('LoginForm')
+export default function RegistrationForm() {
+  const t = useTranslations('RegistrationForm')
   const tI = useTranslations('Inputs')
   const tV = useTranslations('Validation')
 
@@ -38,32 +38,45 @@ export default function LoginForm() {
                 <legend className='text-h4 uppercase'>{t('legend')}</legend>
                 <div role='group' className='flex flex-col gap-6'>
                   <Input
+                    name='name'
+                    label={tI('name.label')}
+                    placeholder={tI('name.placeholder')}
+                  />
+                  <Input
+                    name='lastName'
+                    label={tI('lastName.label')}
+                    placeholder={tI('lastName.placeholder')}
+                  />
+                  <Input
                     name='email'
                     label={tI('email.label')}
                     placeholder={tI('email.placeholder')}
                   />
                   <Input
+                    name='phone'
+                    label={tI('phone.label')}
+                    placeholder='+380 (_ _ _)'
+                  />
+                  <Input
                     name='password'
                     label={tI('password.label')}
-                    placeholder={tI('password.placeholder')}
+                    placeholder={tI('password.placeholderCreate')}
                   />
                 </div>
-                <div className='flex items-center gap-6' role='group'>
+                {/* <div className='flex items-center gap-6' role='group'>
                   <Button type='submit'>{t('button')}</Button>
                   <span className='text-link text-primary-gray underline cursor-not-allowed'>
                     {t('forgotPassword')}
                   </span>
-                </div>
+                </div> */}
               </Form>
             </Formik>
             <div className='w-1/2'>
-              <h2 className='text-h4 uppercase mb-4'>
-                {t('registrationCtaTitle')}
-              </h2>
-              <p className='mb-8 text-small'>
-                {t('registrationCtaDescription')}
-              </p>
-              <Button href='/registration'>{t('registrationCtaLink')}</Button>
+              <h2 className='text-h4 uppercase mb-4'>{t('titleOptions')}</h2>
+              {/* <p className='mb-8 text-small'>{t('titleOptions')}</p> */}
+              <Button type='submit' color='peachy'>
+                {t('button')}
+              </Button>
             </div>
           </div>
         </div>

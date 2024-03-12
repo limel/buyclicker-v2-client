@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import RegistrationForm from 'components/RegistrationForm'
 import Image from 'next/image'
 
 export async function generateMetadata({
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <main>
       <Image
-        className='absolute top-0 left-0 z-0 object-cover w-full h-full'
+        className='absolute top-0 left-0 -z-10 object-cover w-full h-full '
         src='/images/bg/login-registration-form.jpg'
         fill={true}
         layout='fill'
@@ -25,6 +26,7 @@ export default function Home() {
         alt='bg'
         quality={100}
       />
+      <RegistrationForm />
     </main>
   )
 }
