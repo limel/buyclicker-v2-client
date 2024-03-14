@@ -41,6 +41,14 @@
     },
     "phone": {
       "label": "Номер телефону"
+    },
+    "birthday": {
+      "label": "Дата народження"
+    },
+    "gender": {
+      "label": "Стать",
+      "female": "Я - жінка",
+      "male": "Я - чоловік"
     }
   },
   "Validation": {

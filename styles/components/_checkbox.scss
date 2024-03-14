@@ -1,0 +1,19 @@
+.checkbox {
+  @apply flex items-center cursor-pointer;
+
+  &__checkmark {
+    @apply flex items-center justify-center relative w-4 h-4 border-[1px] border-solid border-old-price rounded transition-all duration-300 ease-in-out text-white;
+  }
+
+  input:checked~.checkbox__checkmark {
+    @apply bg-accent border-accent;
+
+    svg {
+      @apply opacity-100;
+    }
+  }
+
+  &__label {
+    @apply text-sm ml-3
+  }
+}

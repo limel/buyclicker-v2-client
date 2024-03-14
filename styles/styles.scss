@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import './util/module';
 @import './layout/module';
+@import './components/module';
 
 
 html {
@@ -46,6 +47,6 @@ a {
   color: inherit;
 }
 
-p{
+p {
   @apply text-base;
 }
