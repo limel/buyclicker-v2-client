@@ -7,4 +7,12 @@ export interface IHeroCard {
   }
   slug: string
   center: boolean
+  translation?: ITranslation
+}
+
+interface ITranslation {
+  [lang: string]: {
+    title: string
+    slug: string
+  }
 }

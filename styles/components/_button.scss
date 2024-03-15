@@ -9,11 +9,11 @@
 
   @mixin hover-focus-effects {
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
+      &:hover:not(:disabled) {
         @content;
       }
 
-      &:focus {
+      &:focus:not(:disabled) {
         outline: none;
         @content;
       }

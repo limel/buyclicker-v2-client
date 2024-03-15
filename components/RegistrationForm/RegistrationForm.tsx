@@ -86,13 +86,13 @@ export default function RegistrationForm() {
                       {t('titleOptions')}
                     </h2>
                     <Checkbox
-                      label='Я хочу отримувати новини на електронній пошті'
+                      label={tI('reciveMail.label')}
                       name='receiveMail'
                       defaultChecked
                       wrapperClassName='mb-4'
                     />
                     <Checkbox
-                      label=' Я підтверджую свою згоду на обробку моїх персональних даних'
+                      label={tI('confirm.label')}
                       name='confirm'
                       wrapperClassName='mb-8'
                     />

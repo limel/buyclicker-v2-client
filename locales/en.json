@@ -49,6 +49,12 @@
       "label": "Gender",
       "female": "I am Female",
       "male": "I am Male"
+    },
+    "reciveMail": {
+      "label": "I want to receive news via email"
+    },
+    "confirm": {
+      "label": "I confirm my consent to the processing of my personal data"
     }
   },
   "Validation": {
