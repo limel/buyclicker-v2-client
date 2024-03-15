@@ -82,17 +82,19 @@ export default function RegistrationForm() {
                   </div>
 
                   <div className='w-1/2'>
-                    <h2 className='text-h4 uppercase mb-4'>
+                    <h2 className='text-h4 uppercase mb-6'>
                       {t('titleOptions')}
                     </h2>
                     <Checkbox
                       label='Я хочу отримувати новини на електронній пошті'
                       name='receiveMail'
                       defaultChecked
+                      wrapperClassName='mb-4'
                     />
                     <Checkbox
                       label=' Я підтверджую свою згоду на обробку моїх персональних даних'
                       name='confirm'
+                      wrapperClassName='mb-8'
                     />
                     <Button
                       type='submit'

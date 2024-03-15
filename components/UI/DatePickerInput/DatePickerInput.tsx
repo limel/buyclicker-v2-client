@@ -5,7 +5,7 @@ import { useField } from 'formik'
 import { useLocale, useTranslations } from 'next-intl'
 
 const CalendarIcon = () => (
-  <svg className='w-6 h-6 text-black'>
+  <svg className='w-6 h-6 text-black cursor-pointer'>
     <use href='/sprite.svg#calendar' />
   </svg>
 )
@@ -18,6 +18,22 @@ const theme = {
     root: {
       base: 'absolute top-10 block pt-2 z-10',
       inline: 'realative top-0 z-auto',
+    },
+  },
+  views: {
+    days: {
+      items: {
+        item: {
+          selected: 'bg-blue text-white',
+        },
+      },
+    },
+    years: {
+      items: {
+        item: {
+          selected: 'bg-blue text-white',
+        },
+      },
     },
   },
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useField } from 'formik'
 import { CheckboxProps } from './Checkbox.types'
+import clsx from 'clsx'
 
 export default function Checkbox(props: CheckboxProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,7 +12,12 @@ export default function Checkbox(props: CheckboxProps) {
   }
 
   return (
-    <label className='checkbox'>
+    <label
+      className={clsx(
+        'checkbox',
+        props.wrapperClassName && props.wrapperClassName
+      )}
+    >
       <input
         type='checkbox'
         className='sr-only'

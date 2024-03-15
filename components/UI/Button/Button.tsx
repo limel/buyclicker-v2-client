@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import ButtonProps from './Button.types'
 
 import { Show } from 'lib/utils/Show'
-import s from './Button.module.scss'
 
 export default function Button({
   href,
@@ -20,7 +19,7 @@ export default function Button({
         <Link
           href={href ?? '/'}
           {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
-          className={clsx(s.btn, s[color], s[size])}
+          className={clsx('btn', color, size)}
         >
           {children}
         </Link>
@@ -28,7 +27,7 @@ export default function Button({
       <Show.Else>
         <button
           data-ripple-dark='true'
-          className={clsx(s.btn, s[color], s[size])}
+          className={clsx('btn', color, size)}
           {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
         >
           {children}
