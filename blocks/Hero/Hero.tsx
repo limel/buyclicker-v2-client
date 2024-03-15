@@ -12,8 +12,8 @@ async function fetchHeroData() {
 export default async function Hero() {
   const heros = await fetchHeroData().then((data) => JSON.parse(data))
   return (
-    <section className='mt-12 mb-12 '>
-      <div className='container grid grid-cols-[0.5fr_1fr_0.5fr] grid-rows-2 gap-x-16 gap-y-8'>
+    <section className='mt-12 mb-12'>
+      <div className='container grid grid-cols-[0.5fr_1fr_0.5fr] grid-rows-2 gap-x-16 gap-y-8 mb-24'>
         {heros &&
           heros.map((hero: IHeroCard, index: number) => (
             <HeroCard
@@ -25,7 +25,7 @@ export default async function Hero() {
             />
           ))}
       </div>
-      <div className='w-full h-1 bg-black mt-24 max-w-[1312px] mx-auto' />
+      <div className='divider' />
     </section>
   )
 }

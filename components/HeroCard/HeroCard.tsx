@@ -22,7 +22,6 @@ export default async function HeroCard({
       <Link href={slug ? slug : '/'} title={title}>
         <div className='mb-4 rounded-xl overflow-hidden'>
           <ImageWithFallback
-            fallbackSrc='/images/placeholder.svg'
             src={src}
             width={center ? 624 : 280}
             height={center ? 400 : 280}

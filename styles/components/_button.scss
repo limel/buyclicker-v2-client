@@ -1,0 +1,62 @@
+@layer components {
+  @mixin button-colors($bg-color, $text-color, $bg-hovered-color, $text-hovered-color) {
+    @apply #{$bg-color} #{$text-color};
+
+    @include hover-focus-effects {
+      @apply #{$bg-hovered-color} #{$text-hovered-color};
+    }
+  }
+
+  @mixin hover-focus-effects {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        @content;
+      }
+
+      &:focus {
+        outline: none;
+        @content;
+      }
+    }
+  }
+
+  .btn {
+    @apply text-button flex items-center justify-center border-[1px] border-solid border-transparent rounded-[100px] w-fit h-fit cursor-pointer transition-all duration-300 ease-in-out;
+
+    svg {
+      @apply w-6 h-6 fill-current;
+    }
+
+    &:disabled {
+      @apply bg-black-disabled text-white opacity-80 cursor-not-allowed;
+    }
+  }
+
+  .primary {
+    @apply py-4 px-8 min-w-[205px];
+  }
+
+  .secondary {
+    @apply py-3 px-6 min-w-[150px];
+  }
+
+  .black {
+    @include button-colors('bg-black', 'text-white', 'bg-black-hovered', 'text-white');
+  }
+
+  .peachy {
+    @include button-colors('bg-peachy', 'text-white', 'bg-peachy-hovered', 'text-white');
+  }
+
+  .grey {
+    @include button-colors('bg-grey-light', 'text-black', 'bg-black', 'text-white');
+  }
+
+  .white {
+    @include button-colors('bg-white', 'text-black', 'bg-black', 'text-white');
+  }
+
+  .transparent {
+    @apply bg-transparent text-black;
+  }
+}

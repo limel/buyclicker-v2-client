@@ -5,5 +5,54 @@
   },
   "Header": {
     "currentLocale": "england"
+  },
+  "RegistrationForm": {
+    "title": "Registration",
+    "legend": "Enter your personal information",
+    "button": "Create an Account",
+    "titleOptions": "Your Preferences"
+  },
+  "LoginForm": {
+    "title": "Log In",
+    "legend": "I already have an account",
+    "button": "Log In",
+    "forgotPassword": "Forgot Password?",
+    "registrationCtaTitle": "I'm a new customer",
+    "registrationCtaDescription": "Creating a Buyclicker account is simple and easy. A Buyclicker account allows you to track the delivery of your purchases, manage your personal data, benefit from exclusive offers, and more. Take a few quick steps today to set up your account.",
+    "registrationCtaLink": "Create an Account"
+  },
+  "Inputs": {
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Your Password",
+      "placeholderCreate": "Create your password"
+    },
+    "name": {
+      "label": "First Name",
+      "placeholder": "Your First Name"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Your Last Name"
+    },
+    "phone": {
+      "label": "Phone Number"
+    },
+    "birthday": {
+      "label": "Date of Birth"
+    },
+    "gender": {
+      "label": "Gender",
+      "female": "I am Female",
+      "male": "I am Male"
+    }
+  },
+  "Validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address"
   }
 }

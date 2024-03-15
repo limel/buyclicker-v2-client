@@ -2,12 +2,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 export default function ImageWithFallback({
-  fallbackSrc,
   src,
   alt,
   ...props
 }: {
-  fallbackSrc: string
   alt: string
   src?: string
   [key: string]: unknown
@@ -32,9 +30,10 @@ export default function ImageWithFallback({
       {...props}
       blurDataURL={rgbDataURL(112, 112, 122)}
       placeholder='blur'
-      src={hasError || !src ? fallbackSrc : src}
+      src={hasError || !src ? '/images/placeholder.svg' : src}
       onError={() => !hasError && setHasError(true)}
       alt={hasError ? 'placeholder' : alt}
+      quality={100}
     />
   )
 }

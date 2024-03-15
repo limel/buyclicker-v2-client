@@ -29,7 +29,7 @@ export function HeaderActions() {
         </span>
       </Link>
       <Link
-        href='#'
+        href='/login'
         className='flex items-center justify-center cursor-pointer w-6 h-6'
       >
         <svg className='w-full h-full'>

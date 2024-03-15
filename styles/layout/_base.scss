@@ -1,0 +1,29 @@
+.divider {
+  @apply w-full h-1 bg-black mt-24 max-w-[1312px] mx-auto
+}
+
+.overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-[#21212152] opacity-0 z-10 transition-opacity duration-300 ease-in-out pointer-events-none;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+.logo {
+  @apply flex items-center justify-center w-40 h-8;
+
+  svg {
+    @apply w-full h-full;
+  }
+}
+
+.ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

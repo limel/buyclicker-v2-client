@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import Hero from 'blocks/Hero'
+import Guides from 'blocks/Guides'
 
 export async function generateMetadata({
   params: { locale },
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Guides />
     </main>
   )
 }
