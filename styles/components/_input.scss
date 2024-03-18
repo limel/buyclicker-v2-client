@@ -1,6 +1,6 @@
 @layer components {
   .input {
-    @apply flex flex-col space-y-2 text-primary-gray text-sm;
+    @apply flex flex-col text-black space-y-2 text-sm;
 
     input {
       outline: none;
@@ -10,6 +10,10 @@
       &:disabled {
         border-color: theme('colors.divider');
         @apply bg-grey-light text-old-price cursor-not-allowed;
+      }
+
+      &::placeholder {
+        color: theme('colors.old-price');
       }
     }
 

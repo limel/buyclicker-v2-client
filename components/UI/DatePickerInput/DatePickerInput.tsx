@@ -51,7 +51,7 @@ function DatePickerInput(props: InputHTMLAttributes<HTMLInputElement>) {
         onSelectedDateChanged={(date: Date) => {
           field.onChange({
             target: {
-              value: date,
+              value: new Date(date).toLocaleDateString(),
               name: field.name,
             },
           })

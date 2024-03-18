@@ -12,12 +12,7 @@ export default function Checkbox(props: CheckboxProps) {
   }
 
   return (
-    <label
-      className={clsx(
-        'checkbox',
-        props.wrapperClassName && props.wrapperClassName
-      )}
-    >
+    <label className={clsx('checkbox', props.wrapperclassname)}>
       <input
         type='checkbox'
         className='sr-only'
