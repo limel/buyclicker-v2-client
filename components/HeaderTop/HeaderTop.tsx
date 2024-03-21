@@ -1,4 +1,5 @@
 'use client'
+import StoreProvider from 'lib/store/StoreProvider'
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { HeaderLangSwitcher as LangSwitcher } from '../HeaderLangSwitcher/HeaderLangSwitcher'
@@ -32,7 +33,9 @@ export function HeaderTop() {
             </svg>
           </Link>
         </h1>
-        <Actions />
+        <StoreProvider>
+          <Actions />
+        </StoreProvider>
       </nav>
     </div>
   )

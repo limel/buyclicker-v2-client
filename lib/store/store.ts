@@ -4,6 +4,7 @@ import { userApi } from 'lib/store/features/user/userApi'
 export const makeStore = () =>
   configureStore({
     reducer: {
+      user: userApi.reducer,
       [userApi.reducerPath]: userApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>

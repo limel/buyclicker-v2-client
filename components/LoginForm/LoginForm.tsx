@@ -4,12 +4,14 @@ import Button from 'components/UI/Button'
 import Input from 'components/UI/Input'
 import { Form, Formik } from 'formik'
 import * as yup from 'yup'
+import { useLoginUserMutation } from 'lib/store/features/user/userApi'
 import { useTranslations } from 'next-intl'
 
 export default function LoginForm() {
   const t = useTranslations('LoginForm')
   const tI = useTranslations('Inputs')
   const tV = useTranslations('Validation')
+  const [loginUser, {}] = useLoginUserMutation()
 
   const validationSchema = yup.object().shape({
     email: yup.string().email(tV('email')).required(tV('required')),
@@ -31,7 +33,7 @@ export default function LoginForm() {
                 password: '',
               }}
               onSubmit={(values) => {
-                console.log(values)
+                loginUser(values)
               }}
             >
               <Form className='w-1/2 flex flex-col gap-8 relative after:absolute after:h-full after:border-r-[1px] after:border-dashed after:border-divider after:-right-8'>
@@ -44,6 +46,8 @@ export default function LoginForm() {
                   />
                   <Input
                     name='password'
+                    type='password'
+                    autoComplete='current-password'
                     label={tI('password.label')}
                     placeholder={tI('password.placeholder')}
                   />

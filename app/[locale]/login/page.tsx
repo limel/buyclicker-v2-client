@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { StoreProvider } from 'lib/store'
 import LoginForm from 'components/LoginForm'
 import Image from 'next/image'
 
@@ -26,7 +27,9 @@ export default function Home() {
         alt='bg'
         quality={100}
       />
-      <LoginForm />
+      <StoreProvider>
+        <LoginForm />
+      </StoreProvider>
     </main>
   )
 }

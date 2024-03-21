@@ -25,14 +25,9 @@ export const getHeroData = async (db: Db) => {
   return heroData
 }
 
-export const generateTokens = (
-  name: string,
-  email: string,
-  role: string,
-  nameInitials: string
-) => {
+export const generateTokens = (id: string, email: string, role: string) => {
   const accessToken = jwt.sign(
-    { name, email, role, nameInitials },
+    { id, email, role },
     'succesaccesstoken', // process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET as string,
     {
       expiresIn: '10m',
@@ -40,7 +35,7 @@ export const generateTokens = (
   )
 
   const refreshToken = jwt.sign(
-    { name, email, role, nameInitials },
+    { id, email, role },
     'securerefreshtoken', // process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET as string,
     {
       expiresIn: '30d',
@@ -69,12 +64,12 @@ export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
   const salt = bcrypt.genSaltSync(10)
   const hash = bcrypt.hashSync(reqBody.password, salt)
 
-  await db.collection('users').insertOne({
+  const { insertedId } = await db.collection('users').insertOne({
     name: reqBody.name,
     lastName: reqBody.lastName,
     nameInitials: reqBody.nameInitials,
     birthdate: reqBody.birthdate,
-    email: reqBody.email,
+    email: reqBody.email.trim().toLowerCase(),
     gender: reqBody.gender,
     phone: reqBody.phone,
     password: hash,
@@ -85,12 +80,7 @@ export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
     createdAt: reqBody.createdAt,
   })
 
-  return generateTokens(
-    reqBody.name,
-    reqBody.email,
-    reqBody.role,
-    reqBody.nameInitials
-  )
+  return generateTokens(insertedId.toString(), reqBody.email, reqBody.role)
 }
 
 export const findUserByEmail = async (db: Db, email: string) => {

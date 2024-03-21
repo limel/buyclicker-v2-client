@@ -24,7 +24,20 @@ export const userApi = createApi({
       }),
       invalidatesTags: [{ type: 'User', id: 'LIST' }],
     }),
+    loginUser: builder.mutation({
+      query: (userData) => ({
+        url: 'login',
+        method: 'POST',
+        body: userData,
+      }),
+      invalidatesTags: [{ type: 'User', id: 'LIST' }],
+    }),
+    getUser: builder.query({
+      query: (id: string) => `/${id}`,
+      providesTags: ['User'],
+    }),
   }),
 })
 
-export const { useAddUserMutation } = userApi
+export const { useAddUserMutation, useLoginUserMutation } = userApi
+export const { reducer: userReducer, middleware: userMiddleware } = userApi

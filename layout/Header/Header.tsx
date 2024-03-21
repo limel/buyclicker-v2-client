@@ -1,6 +1,7 @@
 import Link from 'next/link'
+// import StoreProvider from 'lib/store/StoreProvider'
 import { HeaderTop as Top } from 'components/HeaderTop'
-import { HeaderActions as Actions } from 'components/HeaderActions'
+// import { HeaderActions as Actions } from 'components/HeaderActions'
 import { HeaderWrapper as Wrapper } from 'components/HeaderWrapper'
 import { HeaderCategories as Categories } from 'components/HeaderCategories'
 import { getCategories, getDbAndReqBody } from 'lib/utils/api-routes'
@@ -32,7 +33,9 @@ async function Header() {
             </svg>
           </Link>
           <Categories categories={categories} />
-          <Actions />
+          {/* <StoreProvider>
+            <Actions />
+          </StoreProvider> */}
         </nav>
       </div>
     </Wrapper>

@@ -24,6 +24,7 @@ export default function RootLayout({
           <Header />
           {children}
         </Layout>
+        <div id='modal' />
         <SpeedInsights />
       </body>
     </html>

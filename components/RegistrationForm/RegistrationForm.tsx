@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Formik } from 'formik'
 import { useTranslations } from 'next-intl'
 import * as yup from 'yup'
@@ -9,8 +9,10 @@ import Input from 'components/UI/Input'
 import DatePickerInput from 'components/UI/DatePickerInput'
 import GenderRadio from 'components/GenderRadio'
 import Checkbox from 'components/UI/Checkbox'
+import Modal from 'components/UI/Modal'
 
 export default function RegistrationForm() {
+  const [openModal, setOpenModal] = useState(true)
   const t = useTranslations('RegistrationForm')
   const tI = useTranslations('Inputs')
   const tV = useTranslations('Validation')
@@ -39,12 +41,15 @@ export default function RegistrationForm() {
               gender: 'male', // default value if need change than change defaultChecked in GenderRadio.tsx too
               phone: '',
               password: '',
-              receiveMail: true, // same as for gender
+              reciveMail: true, // same as for gender
               confirm: false,
             }}
             onSubmit={(values) => {
               console.log(isError, isLoading, isSuccess)
+
+              values.email = values.email.trim().toLowerCase()
               addUser(values)
+              // setOpenModal(isSuccess)
             }}
           >
             {(props) => (
@@ -76,6 +81,8 @@ export default function RegistrationForm() {
                     />
                     <Input
                       name='password'
+                      type='password'
+                      autoComplete='current-password'
                       label={tI('password.label')}
                       placeholder={tI('password.placeholderCreate')}
                     />
@@ -87,7 +94,7 @@ export default function RegistrationForm() {
                   </h2>
                   <Checkbox
                     label={tI('reciveMail.label')}
-                    name='receiveMail'
+                    name='reciveMail'
                     defaultChecked
                     wrapperclassname='mb-4'
                   />
@@ -107,6 +114,13 @@ export default function RegistrationForm() {
               </Form>
             )}
           </Formik>
+          <Modal
+            selector='modal'
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+          >
+            <span>success</span>
+          </Modal>
         </div>
       </div>
     </section>
