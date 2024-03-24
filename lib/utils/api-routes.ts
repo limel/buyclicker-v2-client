@@ -25,18 +25,18 @@ export const getHeroData = async (db: Db) => {
   return heroData
 }
 
-export const generateTokens = (name: string, email: string) => {
+export const generateTokens = (id: string, email: string, role: string) => {
   const accessToken = jwt.sign(
-    { name, email },
-    process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET as string,
+    { id, email, role },
+    'succesaccesstoken', // process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET as string,
     {
       expiresIn: '10m',
     }
   )
 
   const refreshToken = jwt.sign(
-    { name, email },
-    process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET as string,
+    { id, email, role },
+    'securerefreshtoken', // process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET as string,
     {
       expiresIn: '30d',
     }
@@ -45,22 +45,42 @@ export const generateTokens = (name: string, email: string) => {
   return { accessToken, refreshToken }
 }
 
-export const createUserAndGenerateTokens = async (
-  db: Db,
-  reqBody: { name: string; email: string; password: string }
-) => {
+interface IUser {
+  name: string
+  lastName: string
+  nameInitials: string
+  birthdate: string
+  email: string
+  gender: string
+  phone: string
+  password: string
+  receiveMail: boolean
+  years: number
+  role: string
+  createdAt: string
+}
+
+export const createUserAndGenerateTokens = async (db: Db, reqBody: IUser) => {
   const salt = bcrypt.genSaltSync(10)
   const hash = bcrypt.hashSync(reqBody.password, salt)
 
-  await db.collection('users').insertOne({
+  const { insertedId } = await db.collection('users').insertOne({
     name: reqBody.name,
-    email: reqBody.email,
+    lastName: reqBody.lastName,
+    nameInitials: reqBody.nameInitials,
+    birthdate: reqBody.birthdate,
+    email: reqBody.email.trim().toLowerCase(),
+    gender: reqBody.gender,
+    phone: reqBody.phone,
     password: hash,
+    recevieMail: reqBody.receiveMail,
+    years: reqBody.years,
     image: '',
     role: 'user',
+    createdAt: reqBody.createdAt,
   })
 
-  return generateTokens(reqBody.name, reqBody.email)
+  return generateTokens(insertedId.toString(), reqBody.email, reqBody.role)
 }
 
 export const findUserByEmail = async (db: Db, email: string) => {

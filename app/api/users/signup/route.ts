@@ -18,7 +18,8 @@ export async function POST(req: Request) {
     }
 
     const tokens = await createUserAndGenerateTokens(db, reqBody)
-    return NextResponse.json(tokens)
+
+    return NextResponse.json(tokens, { status: 201 })
   } catch (err) {
     throw new Error((err as Error).message)
   }

@@ -1,4 +1,5 @@
 'use client'
+import StoreProvider from 'lib/store/StoreProvider'
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { HeaderLangSwitcher as LangSwitcher } from '../HeaderLangSwitcher/HeaderLangSwitcher'
@@ -20,7 +21,7 @@ export function HeaderTop() {
     >
       <nav className='container flex items-center justify-between'>
         <LangSwitcher />
-        <h1 className='my-0 absolute left-1/2 -translate-x-1/2'>
+        <h1 className='logo my-0'>
           <Link
             href='/'
             aria-label={t('title')}
@@ -32,7 +33,9 @@ export function HeaderTop() {
             </svg>
           </Link>
         </h1>
-        <Actions />
+        <StoreProvider>
+          <Actions />
+        </StoreProvider>
       </nav>
     </div>
   )

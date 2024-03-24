@@ -1,0 +1,8 @@
+.modal-wrapper {
+  padding-right: 8px;
+  @apply fixed top-0 left-0 items-center w-full bg-[#21212152] justify-center flex h-[100svh] z-50;
+}
+
+.modal-body {
+  @apply bg-white shadow-sm w-[624px] min-h-[288px] rounded-xl z-10 relative max-h-[70vh] h-fit flex;
+}
