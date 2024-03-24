@@ -21,7 +21,7 @@ export function HeaderTop() {
     >
       <nav className='container flex items-center justify-between'>
         <LangSwitcher />
-        <h1 className='my-0 absolute left-1/2 -translate-x-1/2'>
+        <h1 className='logo my-0'>
           <Link
             href='/'
             aria-label={t('title')}

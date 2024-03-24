@@ -27,14 +27,14 @@ export default async function HeroCard({
             height={center ? 400 : 280}
             priority={true}
             alt={alt || title}
-            className='group-hover/hero:scale-110 transition-transform duration-300 ease-in-out transform-gpu '
+            className='group-hover/hero:scale-110 transition-transform duration-300 ease-in-out transform-gpu'
           />
         </div>
         <h1
           className={clsx(
-            'text-h5 pb-8',
+            'text-h5 mb-8 ellipsis-2',
             center &&
-              'text-h2 pb-0 pt-6 mt-8 border-t-4 border-solid border-black'
+              'text-h2 mb-0 pt-6 mt-8 border-t-4 border-solid border-black'
           )}
         >
           {title}

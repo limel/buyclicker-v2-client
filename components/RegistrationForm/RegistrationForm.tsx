@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Form, Formik } from 'formik'
 import { useTranslations } from 'next-intl'
 import * as yup from 'yup'
+
 import { useAddUserMutation } from 'lib/store/features/user/userApi'
 import Button from 'components/UI/Button'
 import Input from 'components/UI/Input'
@@ -12,11 +13,11 @@ import Checkbox from 'components/UI/Checkbox'
 import Modal from 'components/UI/Modal'
 
 export default function RegistrationForm() {
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
   const t = useTranslations('RegistrationForm')
   const tI = useTranslations('Inputs')
   const tV = useTranslations('Validation')
-  const [addUser, { isError, isLoading, isSuccess }] = useAddUserMutation()
+  const [addUser, result] = useAddUserMutation()
   const validationSchema = yup.object().shape({
     name: yup.string().min(2, tV('min')).required(tV('required')),
     lastName: yup.string().min(2, tV('min')).required(tV('required')),
@@ -28,7 +29,10 @@ export default function RegistrationForm() {
     <section className='pt-12 pb-24'>
       <div className='container'>
         <div className='w-max-[1082px] bg-white rounded-xl'>
-          <h2 className='px-8 py-6 text-h2 border-b-[1px] border-stroke-light-gray'>
+          <h2
+            className='px-8 py-6 text-h2 border-b-[1px] border-stroke-light-gray'
+            // onClick={() => setOpenModal(!openModal)}
+          >
             {t('title')}
           </h2>
           <Formik
@@ -44,11 +48,11 @@ export default function RegistrationForm() {
               reciveMail: true, // same as for gender
               confirm: false,
             }}
-            onSubmit={(values) => {
-              console.log(isError, isLoading, isSuccess)
+            onSubmit={async (values) => {
+              console.log(result)
 
               values.email = values.email.trim().toLowerCase()
-              addUser(values)
+              await addUser(values).then((res) => res)
               // setOpenModal(isSuccess)
             }}
           >
@@ -117,9 +121,16 @@ export default function RegistrationForm() {
           <Modal
             selector='modal'
             openModal={openModal}
-            setOpenModal={setOpenModal}
+            setOpenModal={() => setOpenModal(!openModal)}
           >
-            <span>success</span>
+            <div className='flex items-center flex-col justify-center flex-1'>
+              <div className='w-12 h-12 bg-accent rounded-full flex items-center justify-center'>
+                <svg className='text-white w-6 h-6'>
+                  <use href='/sprite.svg#checkmark' />
+                </svg>
+              </div>
+              asd
+            </div>
           </Modal>
         </div>
       </div>

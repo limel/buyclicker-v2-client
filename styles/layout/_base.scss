@@ -1,29 +1,46 @@
-.divider {
-  @apply w-full h-1 bg-black mt-24 max-w-[1312px] mx-auto
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-[#21212152] opacity-0 z-10 transition-opacity duration-300 ease-in-out pointer-events-none;
-
-  &.active {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.logo {
-  @apply flex items-center justify-center w-40 h-8;
-
-  svg {
-    @apply w-full h-full;
-  }
+body {
+  @apply text-black font-primary;
+  @include scroll;
+  overflow-y: scroll;
 }
 
-.ellipsis {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  @apply text-base;
+}
