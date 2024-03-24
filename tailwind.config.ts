@@ -23,6 +23,7 @@ const config: Config = {
         divider: '#AEAEAE',
         'navigation-bg': '#aeaeae4d', // 30% opacity
         gray: '#D2D2D2',
+        'gray-500': '#e3e1e180',
         'stroke-light-gray': '#EEEEEE',
         accent: '#F5814F',
         'accent-hovered': '#FF9669',

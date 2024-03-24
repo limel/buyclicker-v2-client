@@ -1,0 +1,12 @@
+.loader-wrapper {
+  @apply fixed top-0 left-0 w-full h-full bg-gray-500 z-50 flex items-center justify-center;
+}
+
+.loader-image {
+  @apply w-24 h-24 relative rounded-full bg-white flex items-center justify-center;
+
+  &::before {
+    @apply absolute w-full h-full rounded-full border-4 border-transparent border-t-accent animate-spin;
+    content: '';
+  }
+}
