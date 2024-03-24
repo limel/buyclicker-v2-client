@@ -28,7 +28,7 @@ export const getHeroData = async (db: Db) => {
 export const generateTokens = (id: string, email: string, role: string) => {
   const accessToken = jwt.sign(
     { id, email, role },
-    'succesaccesstoken', // process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET as string,
+    process.env.NEXT_PUBLIC_ACCESS_TOKEN as string,
     {
       expiresIn: '10m',
     }
@@ -36,7 +36,7 @@ export const generateTokens = (id: string, email: string, role: string) => {
 
   const refreshToken = jwt.sign(
     { id, email, role },
-    'securerefreshtoken', // process.env.NEXT_PUBLIC_REFRESH_TOKEN_SECRET as string,
+    process.env.NEXT_PUBLIC_REFRESH_TOKEN as string,
     {
       expiresIn: '30d',
     }

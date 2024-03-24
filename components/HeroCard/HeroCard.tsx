@@ -14,7 +14,7 @@ export default async function HeroCard({
   return (
     <article
       className={clsx(
-        'flex items-center justify-center flex-col w-full border-b-[1px] border-dashed border-divider group/hero [&:nth-of-type(n+4)]:border-none',
+        'flex items-center justify-start flex-col w-full border-b-[1px] border-dashed self-sretch max-h-[344px] h-full border-divider group/hero [&:nth-of-type(n+4)]:border-none',
         center &&
           'min-w-[624px] grid-row-1 grid-col-2 col-span-1 row-span-2 border-none self-start'
       )}

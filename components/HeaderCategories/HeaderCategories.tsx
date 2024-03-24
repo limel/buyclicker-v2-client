@@ -1,8 +1,12 @@
 'use client'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { HeaderCategoryItem as Item } from '../HeaderCategoryItem/HeaderCategoryItem'
 import { ICategory } from 'types/Header.types'
 import { HeaderContext } from 'context/HeaderContext'
+
+import PublicGoogleSheetsParser from 'public-google-sheets-parser'
+
+// 1qzVa2yAwBddUWU0RyQvdZwepibwD6UjXKQIrlb5kAoI
 
 export function HeaderCategories({
   categories = [],
@@ -12,6 +16,16 @@ export function HeaderCategories({
   const { activeIndex } = useContext(HeaderContext) as {
     activeIndex: number | null
   }
+
+  useEffect(() => {
+    const parser = new PublicGoogleSheetsParser(
+      '1qzVa2yAwBddUWU0RyQvdZwepibwD6UjXKQIrlb5kAoI'
+    )
+
+    parser.parse().then((data) => {
+      console.log(data)
+    })
+  }, [])
 
   return (
     <menu className='flex items-center justify-center gap-10 grow-0 shrink-1 basis-3/5'>
