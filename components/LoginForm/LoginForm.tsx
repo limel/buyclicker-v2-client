@@ -4,7 +4,7 @@ import Button from 'components/UI/Button'
 import Input from 'components/UI/Input'
 import { Form, Formik } from 'formik'
 import * as yup from 'yup'
-import { useLoginUserMutation } from 'lib/store/features/user/userApi'
+import { useLoginUserMutation } from 'store/api/user/userApi'
 import { useTranslations } from 'next-intl'
 
 export default function LoginForm() {

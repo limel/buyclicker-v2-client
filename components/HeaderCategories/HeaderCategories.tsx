@@ -1,12 +1,9 @@
 'use client'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { HeaderCategoryItem as Item } from '../HeaderCategoryItem/HeaderCategoryItem'
-import { ICategory } from 'types/Header.types'
+import { ICategory } from 'types/Category.types'
 import { HeaderContext } from 'context/HeaderContext'
-
-import PublicGoogleSheetsParser from 'public-google-sheets-parser'
-
-// 1qzVa2yAwBddUWU0RyQvdZwepibwD6UjXKQIrlb5kAoI
+import Button from 'components/UI/Button'
 
 export function HeaderCategories({
   categories = [],
@@ -17,18 +14,15 @@ export function HeaderCategories({
     activeIndex: number | null
   }
 
-  useEffect(() => {
-    const parser = new PublicGoogleSheetsParser(
-      '1qzVa2yAwBddUWU0RyQvdZwepibwD6UjXKQIrlb5kAoI'
-    )
-
-    parser.parse().then((data) => {
-      console.log(data)
-    })
-  }, [])
-
+  function handler() {
+    const res = fetch('/api/cron/')
+      .then((res) => res)
+      .then((res) => res.json())
+    return res
+  }
   return (
     <menu className='flex items-center justify-center gap-10 grow-0 shrink-1 basis-3/5'>
+      <Button onClick={handler}>fetch</Button>
       {categories &&
         categories.map((category: ICategory, index: number) => (
           <Item

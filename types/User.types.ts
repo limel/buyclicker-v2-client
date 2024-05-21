@@ -13,3 +13,18 @@ export type UserData = {
   role: string
   createdAt: string
 }
+
+export interface IUser {
+  name: string
+  lastName: string
+  nameInitials: string
+  birthdate: string
+  email: string
+  gender: string
+  phone: string
+  password: string
+  receiveMail: boolean
+  years: number
+  role: string
+  createdAt: string
+}

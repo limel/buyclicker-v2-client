@@ -1,5 +1,5 @@
 'use client'
-import StoreProvider from 'lib/store/StoreProvider'
+import StoreProvider from 'store/StoreProvider'
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { HeaderLangSwitcher as LangSwitcher } from '../HeaderLangSwitcher/HeaderLangSwitcher'

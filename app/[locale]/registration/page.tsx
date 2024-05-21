@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { StoreProvider } from 'lib/store'
+import { StoreProvider } from 'store'
 import RegistrationForm from 'components/RegistrationForm'
 import Image from 'next/image'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import StoreProvider from 'lib/store/StoreProvider'
+import StoreProvider from 'store/StoreProvider'
 import { HeaderCategories as Categories } from 'components/HeaderCategories'
 import { HeaderActions as Actions } from 'components/HeaderActions'
 import { getTranslations } from 'next-intl/server'

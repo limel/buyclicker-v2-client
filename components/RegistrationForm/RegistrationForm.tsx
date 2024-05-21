@@ -4,7 +4,7 @@ import { Form, Formik } from 'formik'
 import { useTranslations } from 'next-intl'
 import * as yup from 'yup'
 
-import { useAddUserMutation } from 'lib/store/features/user/userApi'
+import { useAddUserMutation } from 'store/api/user/userApi'
 import Button from 'components/UI/Button'
 import Input from 'components/UI/Input'
 import DatePickerInput from 'components/UI/DatePickerInput'
